@@ -1,0 +1,8 @@
+.footer{
+    position: relative;
+    background-color: skyblue;
+    color: snow;
+    padding: 2px;
+    bottom: 0;
+    width: 99%;
+}
