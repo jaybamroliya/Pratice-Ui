@@ -14,6 +14,7 @@ import {ReactiveFormsModule} from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { UsersModule } from "./users/users.module";
+import {AdminModule} from './admin/admin.module';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { UsersModule } from "./users/users.module";
         MatSlideToggleModule,
         ReactiveFormsModule,
         HttpClientModule,
-        UsersModule
+        UsersModule,
+        AdminModule
     ]
 })
 export class AppModule { }
