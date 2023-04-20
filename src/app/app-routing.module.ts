@@ -6,7 +6,13 @@ import {SignupComponent} from './users/signup/signup.component'
 
 const routes: Routes = [
   {path:'login',component:LoginComponent  },
-  {path:'signup',component:SignupComponent}
+  {path:'signup',component:SignupComponent},
+  {path:'admin', loadChildren:() =>import('./admin/admin.module')
+  .then(mod=>mod.AdminModule) },
+  {path:'user',loadChildren:()=>import('./user/user.module')
+  .then(mod=>mod.UserModule)
+}
+
 ];
 
 @NgModule({

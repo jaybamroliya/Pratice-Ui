@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,ViewContainerRef,ComponentFactoryResolver } from '@angular/core';
 import {NgForm,FormControl,FormGroup,Validators} from '@angular/forms';
+import { AdminlistComponent } from './adminlist/adminlist.component';
 import { UserDataService } from './services/user-data.service';
 
 
@@ -12,7 +13,7 @@ import { UserDataService } from './services/user-data.service';
 export class AppComponent {
   title = 'Basic Form';
   users:any;
-  constructor(private userData:UserDataService) {
+  constructor(private userData:UserDataService,private viewContainer:ViewContainerRef, private cfr:ComponentFactoryResolver)  {
     userData.users().subscribe((data) =>{
       this.users=data
       console.warn("data",data);
@@ -91,8 +92,14 @@ loginUser(){
   
 }
 
+
 get user(){
   return this.loginForm.get('user');
+}
+
+async loadAdmin(){
+this.viewContainer.clear();
+// const (AdminlistComponent) =await import('./adminlist/adminlist.component')
 }
 
 

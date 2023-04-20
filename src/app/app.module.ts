@@ -14,8 +14,11 @@ import {ReactiveFormsModule} from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { UsersModule } from "./users/users.module";
-import {AdminModule} from './admin/admin.module';
-
+// import {AdminModule} from './admin/admin.module';
+import {UserModule} from './user/user.module';
+import { AdminlistComponent } from './adminlist/adminlist.component';
+import { UserlistComponent } from './userlist/userlist.component';
+ 
 
 @NgModule({
     declarations: [
@@ -23,7 +26,9 @@ import {AdminModule} from './admin/admin.module';
         ChildComponent,
         UserDeatailsComponent,
         Child1Component,
-        FooterComponent
+        FooterComponent,
+        AdminlistComponent,
+        UserlistComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -37,7 +42,8 @@ import {AdminModule} from './admin/admin.module';
         ReactiveFormsModule,
         HttpClientModule,
         UsersModule,
-        AdminModule
+        // AdminModule,
+        UserModule
     ]
 })
 export class AppModule { }
